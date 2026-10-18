@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HELP ME 4U Verification</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="admin.html"><b>HELP ME 4U</b><span>Verification</span></a>
+  <nav aria-label="เมนู"><a href="index.html">หน้าสมัคร</a><a href="admin.html" aria-current="page">Admin</a><a href="#" id="logout" hidden>ออกจากระบบ</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section id="login" class="card card-pad login" hidden aria-labelledby="login-title">
+    <h1 id="login-title" style="font-size:1.4rem">เข้าสู่ระบบตรวจสอบองค์กร</h1>
+    <form id="login-form" class="detail">
+      <label class="field">รหัสแอดมิน<input type="password" id="login-key" autocomplete="current-password" required></label>
+      <label class="check-row small"><input type="checkbox" id="login-remember"><span>จำไว้ในเครื่องนี้</span></label>
+      <p class="error" id="login-err" role="alert"></p>
+      <button class="btn primary" id="login-go">เข้าสู่ระบบ</button>
+    </form>
+    <p class="muted small" id="login-hint"></p>
+  </section>
+
+  <div id="app" hidden>
+    <div class="detail">
+      <div class="actions"><h1 class="grow" style="font-size:1.5rem">คิวตรวจสอบองค์กร</h1><span class="muted small" id="who"></span><button class="btn sm" id="reload">รีเฟรช</button></div>
+      <div class="tabs" id="tabs" role="group" aria-label="กรองตามสถานะ"></div>
+      <div class="toolbar">
+        <input type="search" id="q" placeholder="ค้นหาชื่อองค์กร จังหวัด เลขใบสมัคร" aria-label="ค้นหา">
+        <select id="f-type" aria-label="ประเภทองค์กร"><option value="">ทุกประเภท</option></select>
+      </div>
+      <div class="admin" id="admin">
+        <div class="card queue-card"><div class="queue" id="queue"></div></div>
+        <div class="card card-pad detail-card" id="detail"><p class="empty">เลือกใบสมัครจากคิวด้านซ้ายเพื่อตรวจสอบ</p></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="assets/core.js"></script>
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>
