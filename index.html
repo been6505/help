@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HELP ME 4U Partners</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="สมัครเป็นองค์กรพันธมิตร HELP ME 4U: มูลนิธิ สมาคม หน่วยงานรัฐ War Room และกลุ่มอาสา ตรวจสอบก่อนให้สิทธิ์ทุกครั้ง">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#apply"><b>HELP ME 4U</b><span>Partner Trust</span></a>
+  <nav aria-label="เมนู"><a href="#apply">สมัครเข้าร่วม</a><a href="#track">ติดตามใบสมัคร</a><a href="admin.html">Admin</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="intro" aria-labelledby="page-title">
+    <h1 id="page-title">สมัครเป็นองค์กรพันธมิตร HELP ME 4U</h1>
+    <p class="lede">มูลนิธิ สมาคม หน่วยงานรัฐ War Room กลุ่มอาสา และภาคเอกชน สมัครได้ทุกประเภท ทีมงานจะตรวจหลักฐานแล้วให้ระดับสิทธิ์ตามบทบาทจริง</p>
+    <p class="principle">ทุกองค์กรสมัครได้ แต่ไม่มีใครได้สิทธิ์เข้าถึงข้อมูลผู้ประสบภัยโดยอัตโนมัติ</p>
+  </section>
+
+  <section aria-label="ระดับสิทธิ์" class="ladder" id="ladder"></section>
+
+  <section id="apply" class="card" aria-labelledby="apply-title">
+    <h2 id="apply-title" hidden>แบบฟอร์มสมัคร</h2>
+    <ol class="steps" id="steps"></ol>
+    <form id="apply-form" class="card-pad" novalidate>
+      <input type="text" name="website" id="f-website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+
+      <fieldset data-step="1">
+        <legend>องค์กรของคุณเป็นแบบไหน</legend>
+        <div class="types" id="types"></div>
+        <div class="grid2">
+          <label class="field"><span>ชื่อองค์กร / กลุ่ม <i class="req">*</i></span><input type="text" name="org_name" id="f-org_name" maxlength="150" required placeholder="ชื่อตามเอกสารหรือชื่อที่ใช้ปฏิบัติงาน"></label>
+          <label class="field" id="reg-field">เลขทะเบียน / เลขนิติบุคคล<input type="text" name="reg_no" id="f-reg_no" maxlength="60"></label>
+        </div>
+        <div class="grid3">
+          <label class="field" id="parent-field">หน่วยงานต้นสังกัด<input type="text" name="parent_agency" id="f-parent_agency" maxlength="150" placeholder="เช่น สำนักงานเขต, ปภ.จังหวัด"></label>
+          <label class="field">ปีที่เริ่มดำเนินงาน (พ.ศ.)<input type="number" name="founded_year" id="f-founded_year" min="2400" max="2600" inputmode="numeric"></label>
+          <label class="field">จำนวนสมาชิก / เจ้าหน้าที่<input type="number" name="members" id="f-members" min="0" max="99999" inputmode="numeric"></label>
+        </div>
+        <label class="field">เล่าสั้น ๆ ว่าทำอะไร<small>งานที่ผ่านมา และอยากช่วย HELP ME 4U ด้านไหน</small><textarea name="about" id="f-about" maxlength="1000"></textarea></label>
+      </fieldset>
+
+      <fieldset data-step="2" hidden>
+        <legend>ผู้รับผิดชอบ</legend>
+        <p class="muted small">บุคคลที่ทีมงานจะโทรยืนยัน และเป็นผู้รับผิดชอบการใช้ข้อมูลขององค์กร</p>
+        <div class="grid2">
+          <label class="field"><span>ชื่อ–นามสกุล <i class="req">*</i></span><input type="text" name="contact_name" id="f-contact_name" maxlength="100" required autocomplete="name"></label>
+          <label class="field">ตำแหน่ง / บทบาท<input type="text" name="contact_role" id="f-contact_role" maxlength="100" placeholder="เช่น ผู้อำนวยการ, หัวหน้ากะ"></label>
+          <label class="field"><span>เบอร์โทร <i class="req">*</i></span><input type="tel" name="contact_phone" id="f-contact_phone" maxlength="15" required inputmode="tel" autocomplete="tel" placeholder="08x-xxx-xxxx"></label>
+          <label class="field">อีเมล<small>หน่วยงานรัฐควรใช้อีเมลราชการ</small><input type="email" name="contact_email" id="f-contact_email" maxlength="120" autocomplete="email"></label>
+          <label class="field">LINE ID<input type="text" name="contact_line" id="f-contact_line" maxlength="60"></label>
+        </div>
+        <h3>ผู้ติดต่อสำรอง</h3>
+        <div class="grid2">
+          <label class="field">ชื่อ<input type="text" name="backup_name" id="f-backup_name" maxlength="100"></label>
+          <label class="field">เบอร์โทร<input type="tel" name="backup_phone" id="f-backup_phone" maxlength="15" inputmode="tel"></label>
+        </div>
+      </fieldset>
+
+      <fieldset data-step="3" hidden>
+        <legend>พื้นที่และความสามารถ</legend>
+        <div class="grid2">
+          <label class="field"><span>จังหวัดหลักที่ปฏิบัติงาน <i class="req">*</i></span><input type="text" name="province" id="f-province" list="provinces" maxlength="60" required autocomplete="off"></label>
+          <label class="field">เขต / อำเภอ<input type="text" name="districts" id="f-districts" maxlength="300" placeholder="คั่นด้วยจุลภาค"></label>
+        </div>
+        <label class="field">ที่ตั้งองค์กร / ศูนย์<input type="text" name="address" id="f-address" maxlength="300"></label>
+        <div class="field"><span>ช่วยด้านไหนได้บ้าง <i class="req">*</i></span><div class="chips" id="caps"></div></div>
+        <div class="grid2">
+          <label class="field">ทรัพยากรที่มี<small>เรือ รถ ที่พัก กำลังคน</small><textarea name="resources" id="f-resources" maxlength="1000"></textarea></label>
+          <label class="field">ช่วงเวลาที่พร้อมปฏิบัติงาน<input type="text" name="availability" id="f-availability" maxlength="100" placeholder="เช่น 24 ชม. ช่วงน้ำท่วม"></label>
+        </div>
+        <div class="field">ระดับสิทธิ์ที่ต้องการ<small>ทีมงานอาจอนุมัติระดับต่ำกว่านี้ตามหลักฐาน</small><div class="level-pick" id="req-level"></div></div>
+      </fieldset>
+
+      <fieldset data-step="4" hidden>
+        <legend>หลักฐาน</legend>
+        <div class="hint" id="evidence-hint"></div>
+        <label class="drop" id="drop" for="f-files"><b>แนบไฟล์ PDF หรือรูปภาพ</b><span class="small">สูงสุด 5 ไฟล์ ไฟล์ละไม่เกิน 5 MB · ไฟล์เก็บในโฟลเดอร์ที่เฉพาะทีมตรวจสอบเปิดได้</span></label>
+        <input type="file" id="f-files" accept="application/pdf,image/jpeg,image/png,image/webp" multiple hidden>
+        <div class="files" id="file-list"></div>
+        <label class="field">ลิงก์หลักฐาน<small>เพจ เว็บไซต์ ข่าว หรือโพสต์ผลงาน (บรรทัดละ 1 ลิงก์)</small><textarea name="links" id="f-links" maxlength="1600" placeholder="https://"></textarea></label>
+        <label class="field">ผู้รับรอง<small>องค์กรหรือบุคคลที่ทีมงานติดต่อเพื่อยืนยันได้ พร้อมเบอร์โทร</small><input type="text" name="referee" id="f-referee" maxlength="200"></label>
+      </fieldset>
+
+      <fieldset data-step="5" hidden>
+        <legend>ตรวจทานและยอมรับข้อตกลง</legend>
+        <dl class="summary" id="review"></dl>
+        <div class="checks" id="agreements"></div>
+      </fieldset>
+
+      <p class="error" id="form-error" role="alert" hidden></p>
+      <div class="actions">
+        <button type="button" class="btn ghost" id="prev" hidden>← ย้อนกลับ</button>
+        <span class="grow"></span>
+        <button type="button" class="btn primary" id="next">ถัดไป →</button>
+        <button type="submit" class="btn primary" id="submit" hidden>ส่งใบสมัคร</button>
+      </div>
+    </form>
+    <div class="card-pad" id="done" hidden></div>
+  </section>
+
+  <section id="track" class="card card-pad" aria-labelledby="track-title">
+    <div><h2 id="track-title">ติดตามใบสมัคร</h2><p class="muted small">ใช้เลขใบสมัครและรหัสติดตามที่ได้รับหลังส่งใบสมัคร<span id="track-demo"></span></p></div>
+    <form id="track-form" class="grid3" style="align-items:end">
+      <label class="field">เลขใบสมัคร<input type="text" id="t-id" class="mono" placeholder="HM-6910-XXXX" autocomplete="off" required></label>
+      <label class="field">รหัสติดตาม<input type="password" id="t-token" class="mono" autocomplete="off" required></label>
+      <button class="btn primary" id="t-go">ตรวจสถานะ</button>
+    </form>
+    <p class="error" id="track-error" role="alert" hidden></p>
+    <div id="track-result" hidden></div>
+  </section>
+</main>
+<datalist id="provinces"></datalist>
+
+<script src="assets/core.js"></script>
+<script src="assets/api.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/apply.js"></script>
+</body>
+</html>
